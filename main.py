@@ -58,13 +58,8 @@ def build_notify(event, context):
                 },
                 'fields': [
                     {
-                        'name': 'Build Trigger',
-                        'value': f'''{event_data["substitutions"]["TRIGGER_NAME"]}
-[{event_data["id"]}]({event_data['logUrl']})'''
-                    },
-                    {
-                        'name': 'GitHub Repo',
-                        'value':  f'[{event_data["substitutions"]["REPO_NAME"]}](https://github.com/NekoSarada1101/{event_data["substitutions"]["REPO_NAME"]})',
+                        'name': 'Build Log',
+                        'value': f'[{event_data["id"]}]({event_data["logUrl"]})'
                     },
                     {
                         'name': 'Start at',

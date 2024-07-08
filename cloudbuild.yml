@@ -12,6 +12,6 @@ steps:
         "--runtime=python311",
         "--memory=128M",
         "--entry-point=build_notify",
-        "--update-env-vars=WEBHOOK_URL=${_WEBHOOK_URL},ICON_IMAGE_URL=${_ICON_IMAGE_URL},TZ=${_TZ}",
+        "--update-env-vars=WEBHOOK_URL=${_WEBHOOK_URL},ICON_IMAGE_URL=${_ICON_IMAGE_URL}",
         "--service-account=discord-bot@slackbot-288310.iam.gserviceaccount.com",
       ]
