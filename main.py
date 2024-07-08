@@ -40,6 +40,10 @@ def build_notify(event, context):
         logger.debug(f'event_data={event_data_json}')
         event_data = json.loads(event_data_json)
 
+        if event_data['status'] not in ['SUCCESS', 'FAILURE']:
+            logger.info('===== END cloud build notifier =====')
+            return
+
         logger.info('----- create post content -----')
         headers = {'Content-Type': 'application/json'}
         content = f'''Build Status: **{event_data['status']}**'''
